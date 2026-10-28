@@ -1,3 +1,9 @@
 export function slugify(text) {
-  return text.toLowerCase().trim().replace(/\s+/g, "-");
+  return text
+    .normalize("NFKD")
+    .replace(/\p{M}/gu, "")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\p{L}\p{N}-]/gu, "");
 }
