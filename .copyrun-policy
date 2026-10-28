@@ -1,0 +1,4 @@
+{
+  "requireRunOnAgentPRs": true,
+  "receiptComments": true
+}
